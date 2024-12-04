@@ -1,0 +1,135 @@
+/* Main container for the content */
+.main-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Scrollable table wrapper */
+.table-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+/* General table styles */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px; /* Reduced font size for better readability */
+    text-align: left;
+    table-layout: fixed; /* Ensures columns have equal width and prevents overflow */
+}
+
+/* Table header styles */
+.data-table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    position: relative;
+    white-space: wrap; /* Prevents headers from wrapping */
+}
+
+/* Filter dropdown styles within table headers */
+.data-table th select {
+    margin-top: 5px;
+    padding: 4px 6px;
+    font-size: 12px; /* Smaller font size for dropdowns */
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* General cell styles */
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Reduced padding for compactness */
+    text-align: center;
+    white-space: normal; /* Allows text to wrap within cells */
+    word-wrap: break-word; /* Breaks long words to fit in the cell */
+    color: #333; /* Ensures text is visible */
+    font-size: 13px; /* Slightly smaller font size for content */
+}
+
+/* Zebra striping for table rows */
+.data-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Hover effect on table rows */
+.data-table tr:hover {
+    background-color: #eaf4ff;
+}
+
+/* Limiter animation - applies a pulsating border effect */
+.data-table tr.limiter {
+    animation: pulse 2s infinite;
+    border: 2px solid red;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 10px 4px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.3);
+    }
+}
+
+/* Error message styling */
+.error-message {
+    color: #d9534f;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .data-table {
+        font-size: 12px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 6px; /* Reduced padding for smaller screens */
+    }
+
+    .table-wrapper {
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .data-table th,
+    .data-table td {
+        font-size: 11px;
+        padding: 4px;
+    }
+
+    .data-table th select {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+}
